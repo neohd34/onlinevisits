@@ -1,0 +1,4 @@
+rootProject.name = 'onlinevisits'
+
+include(':gateway')
+include(':common')

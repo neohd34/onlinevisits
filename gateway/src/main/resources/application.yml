@@ -1,0 +1,31 @@
+spring:
+  main:
+    banner_mode: 'OFF'
+  application.name: gateway
+
+---
+spring:
+  profiles: docker
+
+server:
+  port: 80
+
+hz:
+  members: gateway
+
+---
+spring:
+  profiles: local
+  jackson:
+    default-property-inclusion: non_null
+    serialization:
+      write_dates_as_timestamps: true
+      write_bigdecimal_as_plain: true
+    deserialization:
+      accept_empty_array_as_null_object: true
+
+server:
+  port: 8085
+
+hz:
+  members: 127.0.0.1

@@ -1,0 +1,16 @@
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+.DS_Store
+.project
+
+target/
+logs/
+.gradle/
+
+**/out/
+**/target/
+**/build/
+build/

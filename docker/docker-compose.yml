@@ -1,0 +1,14 @@
+---
+version: '3.4'
+
+services:
+
+  gateway:
+    image: neohd/onlinevisits:latest
+    container_name: onlinevisits
+    ports:
+      - 8085:80
+      - 5702:5701
+    environment:
+      - SPRING_PROFILES_ACTIVE=dev,docker
+    entrypoint: ["java", "@java-add-opens", "--enable-preview", "-Xmx800m", "-Xms800m", "-Djava.security.egd=file:/dev/./urandom", "-XX:MaxJavaStackTraceDepth=555", "-jar", "/app.jar"]
